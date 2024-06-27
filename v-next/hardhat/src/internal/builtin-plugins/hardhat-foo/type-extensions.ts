@@ -1,3 +1,5 @@
+import "@nomicfoundation/hardhat-core/types/config";
+
 declare module "@nomicfoundation/hardhat-core/types/config" {
   interface FooUserConfig {
     bar?: number | number[];

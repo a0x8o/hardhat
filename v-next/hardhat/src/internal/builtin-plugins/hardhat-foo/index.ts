@@ -2,7 +2,7 @@ import type { HardhatPlugin } from "@nomicfoundation/hardhat-core/types/plugins"
 
 import { globalFlag, task } from "@nomicfoundation/hardhat-core/config";
 
-export type * from "./type-extensions.js";
+import "./type-extensions.js";
 
 export default {
   id: "hardhat-foo",

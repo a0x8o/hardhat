@@ -1,4 +1,5 @@
 import { task, HardhatUserConfig } from "@nomicfoundation/hardhat/config";
+import { HardhatPluginError } from "@nomicfoundation/hardhat/plugins";
 
 export default {
   tasks: [
@@ -10,6 +11,13 @@ export default {
       })
       .setAction(async ({ greeting }, _) => {
         console.log(greeting);
+
+        if (greeting === "") {
+          throw new HardhatPluginError(
+            "example-plugin",
+            "Greeting cannot be empty",
+          );
+        }
       })
       .build(),
   ],
